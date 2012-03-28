@@ -3,9 +3,9 @@
 
 (provide 'my_config)
 
-(setenv "PATH" (concat "~/bin:" (getenv "PATH")))
-(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
-(add-to-list 'exec-path "/usr/local/bin")
+(setenv "PATH" (concat "~/.local/bin:" (getenv "PATH")))
+;; (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(add-to-list 'exec-path "~/.local/bin")
 
 (add-to-list 'load-path "~/src/dotfiles/emacs/php")
 (add-to-list 'load-path "~/src/dotfiles/emacs/custom-keys")
@@ -19,6 +19,7 @@
 (add-to-list 'load-path "~/src/dotfiles/emacs/markdown")
 (add-to-list 'load-path "~/src/dotfiles/emacs/whitespace")
 (add-to-list 'load-path "~/src/dotfiles/emacs/ido")
+(add-to-list 'load-path "~/src/dotfiles/emacs/coffeescript")
 
 (require 'php-mode)
 (require 'custom-keys)
@@ -31,6 +32,7 @@
 (require 'markdown-setup)
 (require 'whitespace-setup)
 (require 'ido-setup)
+(require 'coffeescript_setup)
 
 (require 'http-twiddle)
 (require 'uniquify)
@@ -41,9 +43,9 @@
 (setq ns-pop-up-frames 'nil)
 (setq ring-bell-function 'ignore)
 (setq visible-bell nil)
-(setq mac-command-modifier 'control)
+;; (setq mac-command-modifier 'control)
 
-(menu-bar-mode -1)
+;; (menu-bar-mode -1)
 (if (functionp 'tool-bar-mode) (tool-bar-mode 0))
 (if (functionp 'scroll-bar-mode) (scroll-bar-mode -1))
 
